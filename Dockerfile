@@ -79,4 +79,4 @@ EXPOSE 8000
 
 COPY . $APP_HOME
 
-CMD ["/bin/sh", "-c", "./manage.py migrate && gunicorn -c ./document_merge_service/gunicorn.py"]
+CMD ["/bin/sh", "-c", "./manage.py migrate && gunicorn --preload -c ./document_merge_service/gunicorn.py"]
